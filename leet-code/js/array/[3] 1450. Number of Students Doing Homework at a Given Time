@@ -1,0 +1,44 @@
+
+problem : 1450. Number of Students Doing Homework at a Given Time
+
+Given two integer arrays startTime and endTime and given an integer queryTime.
+
+The ith student started doing their homework at the time startTime[i] and finished it at time endTime[i].
+
+Return the number of students doing their homework at time queryTime. 
+More formally, return the number of students 
+where queryTime lays in the interval [startTime[i], endTime[i]] inclusive.
+
+
+Input: startTime = [1,2,3], endTime = [3,2,7], queryTime = 4
+Output: 1
+
+Input: startTime = [4], endTime = [4], queryTime = 4
+Output: 1
+
+Input: startTime = [9,8,7,6,5,4,3,2,1], endTime = [10,10,10,10,10,10,10,10,10], queryTime = 5
+Output: 5
+
+///solution 
+
+var startTime = [4] 
+var endTime = [4] 
+var queryTime = 5
+
+ 
+var busyStudent = function(startTime, endTime, queryTime) {
+    var n = startTime.length 
+    var c = 0 
+    for( let i = 0 ; i < n ; i++ ){
+        if( startTime[i] <= queryTime && endTime[i] >= queryTime){
+            c += 1 
+        }
+    }
+    return (c)
+};
+
+
+var r = busyStudent(startTime , endTime , queryTime)
+// console.log(r)
+
+response from oj :  72 ms, faster than 77.42% of JavaScript online submissions for Number of Students Doing Homework at a Given Time.
